@@ -1,0 +1,11 @@
+version: '3'
+services:
+  dcm:
+    build: .
+    container_name: dcm
+    command: bash -c "tail -f /dev/null"
+    volumes:
+      - .:/usr/src
+      - /usr/src/node_modules
+    ports:
+      - "3000:3000"

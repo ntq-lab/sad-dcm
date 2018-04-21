@@ -1,0 +1,33 @@
+{
+  "name": "dcm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "babel-cli": "6.26.0",
+    "babel-plugin-module-resolver": "3.0.0",
+    "babel-plugin-transform-runtime": "6.23.0",
+    "babel-preset-env": "1.6.1",
+    "babel-preset-stage-2": "6.24.1",
+    "concurrently": "3.5.0",
+    "nodemon": "1.12.1"
+  },
+  "scripts": {
+    "start": "concurrently --raw \"yarn start:dcm\"",
+    "start:dcm": "cd src && nodemon dcm/ --exec babel-node"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ntq-lab/sad-dcm.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ntq-lab/sad-dcm/issues"
+  },
+  "homepage": "https://github.com/ntq-lab/sad-dcm#readme"
+}
