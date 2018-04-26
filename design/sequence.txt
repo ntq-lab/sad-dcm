@@ -1,0 +1,27 @@
+# http://sequencediagram.org/
+
+title DCM
+
+actor user
+boundary web
+database blob
+database db
+control job
+boundary iss
+
+user -> web: upload
+web -> blob: save
+web -> db: insert
+note right of db:job_statuses
+web ->>(1) job: trigger
+job -> job: execute job
+job -> db: read
+job -> blob: download
+job -> job: check file
+job -> db: insert
+job -> job: create batch info
+job -> iss: call API
+job <-- iss: 
+job -> db: update
+iss ->>(1) web: webhook
+web -> db: update
